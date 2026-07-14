@@ -100,7 +100,7 @@
         <!-- Background Image -->
         <img alt="Financial Application Illustration" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBep7Jxa4xq8E_m2vnl9jVMiUd5LMKPWhwzqWgTfM6Cl9duz9OBrS5Y-YFzeRDmNsGXz3jak9zYKih3lUqcTj1lS1-icMxeU5mwC7mnwkmr_Y5vDw_r53Zw49Cugw1Lzml4HE04AhKp0KuQsEeBjO8MMqUZgx06xOJKFGNEJ4pj6mGAth2HdQDBhSohImqh9F-pUso4_B3Wl07xysVOLPHC0FBgAxU9f90LcWtT01zHMxtJ5-Wh5tOt6PwMNiU6tMLOa13wYEfEBwFXlZY" />
         <!-- Overlay for readability at bottom -->
-        <div class="absolute inset-0 bg-gradient-to-t from-[#022c30]/90 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
         <!-- Content over illustration -->
         <div class="absolute bottom-0 left-0 right-0 p-12 text-center text-white z-10">
           <h3 class="text-2xl font-bold mb-4 px-10">A Unified Hub for Smarter Financial Decision-Making</h3>

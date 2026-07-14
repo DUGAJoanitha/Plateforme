@@ -26,7 +26,7 @@
           </div>
           <span :class="`text-xs font-semibold px-2 py-1 rounded-full ${kpi.badgeClass}`">{{ kpi.trend }}</span>
         </div>
-        <p class="text-2xl font-bold text-gray-900">{{ kpi.value }}</p>
+        <p class="text-2xl font-bold text-gray-900 tabular-nums">{{ kpi.value }}</p>
         <p class="text-xs text-gray-500 mt-1">{{ kpi.title }}</p>
       </div>
     </div>
@@ -48,7 +48,7 @@
                 <div class="flex-1 bg-gray-100 rounded-full h-1.5">
                   <div :class="`h-1.5 rounded-full ${project.barColor}`" :style="`width: ${project.progress}%`"></div>
                 </div>
-                <span class="text-xs text-gray-500 flex-shrink-0">{{ project.progress }}%</span>
+                <span class="text-xs text-gray-500 flex-shrink-0 tabular-nums">{{ project.progress }}%</span>
               </div>
             </div>
             <div class="text-right flex-shrink-0">
@@ -85,7 +85,7 @@
           <div v-for="b in budgetItems" :key="b.label">
             <div class="flex justify-between text-xs mb-1">
               <span class="text-gray-600">{{ b.label }}</span>
-              <span class="font-semibold text-gray-800">{{ b.value }}</span>
+              <span class="font-semibold text-gray-800 tabular-nums">{{ b.value }}</span>
             </div>
             <div class="w-full bg-gray-100 rounded-full h-2">
               <div :class="`h-2 rounded-full ${b.color}`" :style="`width: ${b.pct}%`"></div>
@@ -94,7 +94,7 @@
         </div>
         <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
           <span class="text-xs text-gray-500">Solde disponible</span>
-          <span class="text-sm font-bold text-brand-teal">18 500 000 FCFA</span>
+          <span class="text-sm font-bold text-brand-teal tabular-nums">18 500 000 FCFA</span>
         </div>
       </div>
 
