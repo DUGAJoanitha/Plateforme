@@ -2,12 +2,329 @@
 @tailwind components;
 @tailwind utilities;
 
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  display: inline-block;
-  vertical-align: middle;
+/* ─────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F9FF;
+    color: #121C2A;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: #083C44;
+  }
 }
 
-body {
-  font-family: 'Inter', sans-serif;
+/* ─────────────────────────────────────────────────────────
+   COMPONENTS
+───────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ── Buttons ─────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #083C44;
+    background: linear-gradient(135deg, #22C7D6, #8EF2FC);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 10px rgba(34,199,214,0.3);
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 4px 18px rgba(34,199,214,0.55);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0px) scale(0.97);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #083C44;
+    background: #FFFFFF;
+    border: 1px solid #D9E1E7;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    border-color: #22C7D6;
+    color: #22C7D6;
+    box-shadow: 0 0 10px rgba(34,199,214,0.2);
+  }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #083C44;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-dark:hover {
+    background: #0a4d57;
+    box-shadow: 0 4px 16px rgba(8,60,68,0.25);
+  }
+
+  /* ── Cards ───────────────────────────────────────────── */
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #D9E1E7;
+    border-radius: 0.5rem;
+    padding: 24px;
+    transition: all 0.2s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(8,60,68,0.07);
+    border-color: rgba(34,199,214,0.4);
+  }
+
+  .card-sm {
+    background: #FFFFFF;
+    border: 1px solid #D9E1E7;
+    border-radius: 0.5rem;
+    padding: 16px;
+  }
+
+  /* ── Badges ─────────────────────────────────────────── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 0.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .badge-brand {
+    background: rgba(34,199,214,0.12);
+    color: #083C44;
+  }
+  .badge-success {
+    background: rgba(22,163,74,0.1);
+    color: #166534;
+  }
+  .badge-warning {
+    background: rgba(217,119,6,0.1);
+    color: #92400e;
+  }
+  .badge-error {
+    background: rgba(220,38,38,0.1);
+    color: #991b1b;
+  }
+  .badge-neutral {
+    background: rgba(110,121,122,0.1);
+    color: #3E494A;
+  }
+  .badge-planned {
+    background: rgba(8,60,68,0.08);
+    color: #3E494A;
+  }
+
+  /* ── Progress bar ───────────────────────────────────── */
+  .progress-track {
+    width: 100%;
+    background: #EEF3F4;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    background: linear-gradient(90deg, #22C7D6, #8EF2FC);
+    border-radius: 9999px;
+    transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* ── Form inputs ─────────────────────────────────────── */
+  .input-field {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #D9E1E7;
+    border-radius: 0.5rem;
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #121C2A;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  .input-field:focus {
+    border-color: #22C7D6;
+    box-shadow: 0 0 0 3px rgba(34,199,214,0.15);
+  }
+  .input-field::placeholder {
+    color: #6E797A;
+  }
+
+  /* ── Toggle switch ───────────────────────────────────── */
+  .toggle {
+    width: 44px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+  }
+  .toggle-on  { background: #22C7D6; }
+  .toggle-off { background: #D9E1E7; }
+  .toggle-thumb {
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border-radius: 9999px;
+    box-shadow: 0 1px 4px rgba(8,60,68,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  /* ── Page header ─────────────────────────────────────── */
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .page-title {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #083C44;
+  }
+  .page-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #6E797A;
+    margin-top: 2px;
+  }
+
+  /* ── Table ───────────────────────────────────────────── */
+  .table-container {
+    background: #FFFFFF;
+    border: 1px solid #D9E1E7;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .table-header {
+    background: #F8F9FF;
+    border-bottom: 1px solid #D9E1E7;
+    padding: 10px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: #6E797A;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .table-row {
+    border-bottom: 1px solid #F0F4F5;
+    transition: background 0.15s ease;
+  }
+  .table-row:hover {
+    background: rgba(142,242,252,0.05);
+  }
+
+  /* ── Section header bar ──────────────────────────────── */
+  .section-header {
+    background: #083C44;
+    color: #FFFFFF;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  /* ── KPI Icon wrapper ────────────────────────────────── */
+  .kpi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+    background: rgba(34,199,214,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #22C7D6;
+    flex-shrink: 0;
+  }
+
+  /* ── Activity dot ────────────────────────────────────── */
+  .activity-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background: rgba(34,199,214,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #22C7D6;
+    flex-shrink: 0;
+  }
+
+  /* ── Avatar ──────────────────────────────────────────── */
+  .avatar-sm {
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #22C7D6, #8EF2FC);
+    color: #083C44;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   UTILITIES
+───────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-brand-dark  { color: #083C44; }
+  .text-brand-mid   { color: #22C7D6; }
+  .text-brand-light { color: #8EF2FC; }
+  .bg-brand-dark    { background-color: #083C44; }
+  .bg-brand-mid     { background-color: #22C7D6; }
+  .bg-brand-tinted  { background-color: rgba(142,242,252,0.08); }
+  .border-brand     { border-color: #22C7D6; }
+  .font-display     { font-family: 'Hanken Grotesk', sans-serif; }
+  .font-mono-label  { font-family: 'JetBrains Mono', monospace; }
+  .glow-mid         { box-shadow: 0 0 14px rgba(34,199,214,0.45); }
 }

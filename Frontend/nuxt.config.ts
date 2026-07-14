@@ -8,9 +8,12 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      Inter: [300, 400, 500, 600, 700],
-      'Material Symbols Outlined': true
-    }
+      'Hanken Grotesk': [400, 500, 600, 700],
+      'Inter': [300, 400, 500, 600, 700],
+      'JetBrains Mono': [400, 500],
+    },
+    display: 'swap',
+    preload: true,
   },
   css: ['~/assets/css/main.css']
 })

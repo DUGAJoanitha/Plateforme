@@ -1,14 +1,14 @@
 <template>
   <div class="max-w-7xl mx-auto p-6 md:p-8 space-y-6">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-2">
+    <div class="page-header flex-col md:flex-row items-start md:items-end gap-4 mb-2">
       <div>
-        <h1 class="text-2xl font-bold text-gray-900">Gestion budgétaire</h1>
-        <p class="text-sm text-gray-500 mt-1">Aperçu en temps réel de l'allocation des ressources de l'entreprise</p>
+        <h1 class="page-title">Gestion budgétaire</h1>
+        <p class="page-subtitle mt-1">Aperçu en temps réel de l'allocation des ressources de l'entreprise</p>
       </div>
       <div class="flex gap-2">
-        <div class="bg-red-50 text-red-600 border border-red-100 px-4 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold">
-          <LucideIcon name="AlertTriangle" class="w-4 h-4 text-red-500 flex-shrink-0 animate-bounce" />
+        <div class="badge badge-error px-4 py-2 flex items-center gap-2">
+          <LucideIcon name="AlertTriangle" class="w-4 h-4 flex-shrink-0 animate-bounce" />
           3 Alertes Budgétaires Actives
         </div>
       </div>
@@ -17,53 +17,53 @@
     <!-- Bento Grid Stats -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-44">
+      <div class="card flex flex-col justify-between h-44 hover:shadow-card-hover">
         <div class="space-y-2">
           <div class="flex justify-between items-start">
-            <span class="text-xs font-semibold text-gray-500">Budget Total (Ex. 2024)</span>
-            <div class="bg-[#007a82]/10 p-2 rounded-xl text-[#007a82] flex items-center justify-center">
+            <span class="font-mono-label text-xs" style="color:#6E797A">Budget Total (Ex. 2024)</span>
+            <div class="kpi-icon">
               <LucideIcon name="Wallet" class="w-5 h-5" />
             </div>
           </div>
-          <div class="text-3xl font-bold text-gray-900">$2,450,000.00</div>
+          <div class="font-display text-3xl font-bold" style="color:#083C44">$2,450,000.00</div>
         </div>
-        <div class="flex items-center gap-1.5 text-emerald-600 text-xs font-semibold">
+        <div class="flex items-center gap-1.5 font-mono-label text-xs font-semibold" style="color:#16A34A">
           <LucideIcon name="TrendingUp" class="w-4 h-4" />
           <span>+12.5% vs l'année dernière</span>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-44">
+      <div class="card flex flex-col justify-between h-44 hover:shadow-card-hover">
         <div class="space-y-2">
           <div class="flex justify-between items-start">
-            <span class="text-xs font-semibold text-gray-500">Dépenses Actuelles</span>
-            <div class="bg-blue-50 p-2 rounded-xl text-blue-600 flex items-center justify-center">
+            <span class="font-mono-label text-xs" style="color:#6E797A">Dépenses Actuelles</span>
+            <div class="kpi-icon">
               <LucideIcon name="BarChart3" class="w-5 h-5" />
             </div>
           </div>
-          <div class="text-3xl font-bold text-gray-900">$1,180,450.00</div>
+          <div class="font-display text-3xl font-bold" style="color:#083C44">$1,180,450.00</div>
         </div>
         <div class="space-y-1.5">
-          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-            <div class="bg-[#007a82] h-full rounded-full transition-all duration-500" style="width: 48.2%"></div>
+          <div class="progress-track h-2">
+            <div class="progress-fill h-2" style="width: 48.2%"></div>
           </div>
-          <div class="text-xs text-gray-400">48.2% du total alloué</div>
+          <div class="font-mono-label text-xs" style="color:#6E797A">48.2% du total alloué</div>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-44">
+      <div class="card flex flex-col justify-between h-44 hover:shadow-card-hover">
         <div class="space-y-2">
           <div class="flex justify-between items-start">
-            <span class="text-xs font-semibold text-gray-500">Solde Restant</span>
-            <div class="bg-purple-50 p-2 rounded-xl text-purple-600 flex items-center justify-center">
+            <span class="font-mono-label text-xs" style="color:#6E797A">Solde Restant</span>
+            <div class="kpi-icon">
               <LucideIcon name="Landmark" class="w-5 h-5" />
             </div>
           </div>
-          <div class="text-3xl font-bold text-gray-900">$1,269,550.00</div>
+          <div class="font-display text-3xl font-bold" style="color:#083C44">$1,269,550.00</div>
         </div>
-        <div class="flex items-center gap-1.5 text-purple-600 text-xs font-semibold">
+        <div class="flex items-center gap-1.5 font-mono-label text-xs font-semibold" style="color:#D97706">
           <LucideIcon name="Clock" class="w-4 h-4" />
           <span>Projection : -2% d'ici le T4</span>
         </div>
@@ -73,21 +73,21 @@
     <!-- Charts Section -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <!-- Spending Trends Line Chart -->
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+      <div class="card space-y-6">
         <div class="flex justify-between items-center">
-          <h3 class="text-base font-bold text-gray-900">Tendances des dépenses</h3>
-          <div class="flex gap-1.5 bg-gray-50 p-1 rounded-xl border border-gray-100">
+          <h3 class="font-display text-base font-bold" style="color:#083C44">Tendances des dépenses</h3>
+          <div class="flex gap-1.5 p-1 rounded-lg" style="background:#F8F9FF;border:1px solid #D9E1E7">
             <button 
               @click="spendInterval = 'monthly'" 
-              class="px-3 py-1 rounded-lg text-xs font-semibold transition-all duration-200"
-              :class="spendInterval === 'monthly' ? 'bg-white text-gray-800 shadow-sm border border-gray-100' : 'text-gray-500 hover:text-gray-800'"
+              class="font-mono-label px-3 py-1 rounded text-xs transition-all duration-200"
+              :style="spendInterval === 'monthly' ? 'background:#fff;color:#083C44;box-shadow:0 1px 3px rgba(8,60,68,0.1)' : 'color:#6E797A'"
             >
               Mensuel
             </button>
             <button 
               @click="spendInterval = 'quarterly'" 
-              class="px-3 py-1 rounded-lg text-xs font-semibold transition-all duration-200"
-              :class="spendInterval === 'quarterly' ? 'bg-white text-gray-800 shadow-sm border border-gray-100' : 'text-gray-500 hover:text-gray-800'"
+              class="font-mono-label px-3 py-1 rounded text-xs transition-all duration-200"
+              :style="spendInterval === 'quarterly' ? 'background:#fff;color:#083C44;box-shadow:0 1px 3px rgba(8,60,68,0.1)' : 'color:#6E797A'"
             >
               Trimestriel
             </button>
@@ -96,16 +96,16 @@
         <div class="h-64 relative flex items-end">
           <!-- simulated background lines -->
           <div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-5">
-            <div class="border-b border-gray-950"></div>
-            <div class="border-b border-gray-950"></div>
-            <div class="border-b border-gray-950"></div>
-            <div class="border-b border-gray-950"></div>
+            <div class="border-b" style="border-color:#121C2A"></div>
+            <div class="border-b" style="border-color:#121C2A"></div>
+            <div class="border-b" style="border-color:#121C2A"></div>
+            <div class="border-b" style="border-color:#121C2A"></div>
           </div>
           <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 400 200">
             <path 
               :d="spendInterval === 'monthly' ? 'M0,180 L80,140 L160,160 L240,80 L320,100 L400,40' : 'M0,160 L130,120 L270,140 L400,60'" 
               fill="none" 
-              stroke="#007a82" 
+              stroke="#22C7D6" 
               stroke-linecap="round" 
               stroke-width="3"
               class="transition-all duration-1000"
@@ -113,42 +113,42 @@
             <path 
               :d="spendInterval === 'monthly' ? 'M0,180 L80,140 L160,160 L240,80 L320,100 L400,40 V200 H0 Z' : 'M0,160 L130,120 L270,140 L400,60 V200 H0 Z'" 
               fill="url(#grad1)" 
-              opacity="0.08"
+              opacity="0.15"
               class="transition-all duration-1000"
             ></path>
             <defs>
               <linearGradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#007a82;stop-opacity:1"></stop>
-                <stop offset="100%" style="stop-color:#007a82;stop-opacity:0"></stop>
+                <stop offset="0%" style="stop-color:#22C7D6;stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:#22C7D6;stop-opacity:0"></stop>
               </linearGradient>
             </defs>
           </svg>
         </div>
-        <div class="flex justify-between text-[10px] font-semibold text-gray-400 px-1">
+        <div class="flex justify-between font-mono-label text-[10px] px-1" style="color:#6E797A">
           <span v-for="label in intervalLabels" :key="label">{{ label }}</span>
         </div>
       </div>
 
       <!-- Allocation by Project Bar Chart -->
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+      <div class="card space-y-6">
         <div class="flex justify-between items-center">
-          <h3 class="text-base font-bold text-gray-900">Allocation par projet</h3>
-          <button class="text-gray-400 hover:text-gray-600 transition-colors flex items-center justify-center">
+          <h3 class="font-display text-base font-bold" style="color:#083C44">Allocation par projet</h3>
+          <button class="transition-colors flex items-center justify-center" style="color:#6E797A" @mouseenter="e=>e.target.style.color='#22C7D6'" @mouseleave="e=>e.target.style.color='#6E797A'">
             <LucideIcon name="Settings" class="w-5 h-5" />
           </button>
         </div>
         <div class="space-y-5">
           <div v-for="proj in projectAllocations" :key="proj.name" class="space-y-1.5">
-            <div class="flex justify-between text-xs font-semibold">
-              <span class="text-gray-800">{{ proj.name }}</span>
-              <span class="text-[#007a82]">{{ proj.spent }}k$ / {{ proj.total }}k$</span>
+            <div class="flex justify-between font-mono-label text-xs font-semibold">
+              <span style="color:#121C2A">{{ proj.name }}</span>
+              <span style="color:#22C7D6">{{ proj.spent }}k$ / {{ proj.total }}k$</span>
             </div>
-            <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
-              <div class="bg-[#007a82] h-full rounded-full transition-all duration-500" :style="`width: ${proj.pct}%`"></div>
+            <div class="progress-track h-2.5">
+              <div class="progress-fill h-2.5" :style="`width: ${proj.pct}%`"></div>
             </div>
-            <div class="flex justify-between text-[10px] text-gray-400">
-              <span>{{ proj.pct }}% consommé</span>
-              <span :class="proj.pct > 75 ? 'text-red-500 font-semibold' : 'text-gray-400'">
+            <div class="flex justify-between font-mono-label text-[10px]">
+              <span style="color:#6E797A">{{ proj.pct }}% consommé</span>
+              <span :style="proj.pct > 75 ? 'color:#DC2626;font-weight:600' : 'color:#6E797A'">
                 {{ proj.pct > 75 ? 'Dépassement proche' : 'Budget OK' }}
               </span>
             </div>
@@ -158,16 +158,16 @@
     </div>
 
     <!-- Detailed Transactions Table -->
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-      <div class="p-6 border-b border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <h3 class="text-base font-bold text-gray-900">Transactions Récentes</h3>
+    <div class="table-container">
+      <div class="p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" style="border-bottom:1px solid #D9E1E7">
+        <h3 class="font-display text-base font-bold" style="color:#083C44">Transactions Récentes</h3>
         <div class="flex gap-3">
-          <button class="flex items-center gap-1.5 px-4 py-2 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl text-xs font-semibold transition-all">
-            <LucideIcon name="Filter" class="w-4 h-4 text-gray-500" />
+          <button class="btn-secondary text-xs">
+            <LucideIcon name="Filter" class="w-4 h-4" style="color:#6E797A" />
             Filtrer
           </button>
-          <button class="flex items-center gap-1.5 px-4 py-2 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl text-xs font-semibold transition-all">
-            <LucideIcon name="Calendar" class="w-4 h-4 text-gray-500" />
+          <button class="btn-secondary text-xs">
+            <LucideIcon name="Calendar" class="w-4 h-4" style="color:#6E797A" />
             Tout temps
           </button>
         </div>
@@ -175,32 +175,28 @@
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse">
           <thead>
-            <tr class="bg-gray-50 text-gray-400 text-[10px] font-bold uppercase tracking-wider border-b border-gray-100">
-              <th class="px-6 py-4">Date</th>
-              <th class="px-6 py-4">Description</th>
-              <th class="px-6 py-4">Catégorie</th>
-              <th class="px-6 py-4">Projet</th>
-              <th class="px-6 py-4">Montant</th>
-              <th class="px-6 py-4">Statut</th>
+            <tr>
+              <th class="table-header px-6 py-4">Date</th>
+              <th class="table-header px-6 py-4">Description</th>
+              <th class="table-header px-6 py-4">Catégorie</th>
+              <th class="table-header px-6 py-4">Projet</th>
+              <th class="table-header px-6 py-4">Montant</th>
+              <th class="table-header px-6 py-4">Statut</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-100 text-sm">
-            <tr v-for="tx in transactions" :key="tx.desc" class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-4 text-gray-500 font-medium whitespace-nowrap">{{ tx.date }}</td>
-              <td class="px-6 py-4 text-gray-800 font-bold">{{ tx.desc }}</td>
+          <tbody>
+            <tr v-for="tx in transactions" :key="tx.desc" class="table-row">
+              <td class="px-6 py-4 font-mono-label text-xs whitespace-nowrap" style="color:#6E797A">{{ tx.date }}</td>
+              <td class="px-6 py-4 font-semibold text-sm" style="color:#121C2A">{{ tx.desc }}</td>
               <td class="px-6 py-4">
-                <span class="px-2.5 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
+                <span class="badge badge-neutral">
                   {{ tx.category }}
                 </span>
               </td>
-              <td class="px-6 py-4 text-gray-600 font-semibold">{{ tx.project }}</td>
-              <td class="px-6 py-4 font-bold text-red-500 whitespace-nowrap">{{ tx.amount }}</td>
+              <td class="px-6 py-4 text-sm" style="color:#3E494A">{{ tx.project }}</td>
+              <td class="px-6 py-4 font-mono-label font-bold whitespace-nowrap" style="color:#DC2626">{{ tx.amount }}</td>
               <td class="px-6 py-4">
-                <span 
-                  class="flex items-center gap-1.5 text-xs font-bold"
-                  :class="tx.status === 'Terminé' ? 'text-emerald-600' : tx.status === 'En attente' ? 'text-blue-500' : 'text-red-500'"
-                >
-                  <span class="w-1.5 h-1.5 rounded-full" :class="tx.status === 'Terminé' ? 'bg-emerald-500' : tx.status === 'En attente' ? 'bg-blue-500' : 'bg-red-500'"></span>
+                <span class="badge" :class="tx.status === 'Terminé' ? 'badge-success' : tx.status === 'En attente' ? 'badge-brand' : 'badge-error'">
                   {{ tx.status }}
                 </span>
               </td>
@@ -208,13 +204,13 @@
           </tbody>
         </table>
       </div>
-      <div class="p-4 bg-gray-50/50 flex justify-center border-t border-gray-100">
-        <button class="text-[#007a82] font-semibold text-sm hover:underline">Voir toutes les transactions</button>
+      <div class="p-4 flex justify-center" style="background:#F8F9FF;border-top:1px solid #D9E1E7">
+        <button class="font-mono-label text-xs font-semibold hover:underline transition-colors" style="color:#22C7D6">Voir toutes les transactions</button>
       </div>
     </div>
 
     <!-- Contextual FAB (Only for Budgets screen) -->
-    <button class="fixed bottom-6 right-6 h-14 w-14 bg-[#007a82] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 z-50">
+    <button class="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-glow-lg flex items-center justify-center transition-all duration-200 z-50 hover:scale-110 active:scale-95" style="background:linear-gradient(135deg,#22C7D6,#8EF2FC);color:#083C44">
       <LucideIcon name="Plus" class="w-6 h-6" />
     </button>
   </div>
